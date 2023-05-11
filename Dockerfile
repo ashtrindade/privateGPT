@@ -4,11 +4,9 @@ FROM python:3
 WORKDIR /usr/src/app
 
 # download models
-RUN wget --trusted-host gpt4all.io https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin
-RUN mv ggml-gpt4all-j-v1.3-groovy.bin /models
+ADD https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin /usr/src/app/models
 
-RUN wget --trusted-host huggingface.co https://huggingface.co/Pi3141/alpaca-native-7B-ggml/resolve/397e872bf4c83f4c642317a5bf65ce84a105786e/ggml-model-q4_0.bin
-RUN mv ggml-model-q4_0.bin /models
+ADD https://huggingface.co/Pi3141/alpaca-native-7B-ggml/resolve/397e872bf4c83f4c642317a5bf65ce84a105786e/ggml-model-q4_0.bin /usr/src/app/models
 
 # install dependencies
 COPY requirements.txt ./
