@@ -42,7 +42,7 @@ docker build -t private-gpt .
 ```
 
 ```shell
-docker run -it --rm --name private-gpt private-gpt
+docker run private-gpt
 ```
 
 ## Test dataset
