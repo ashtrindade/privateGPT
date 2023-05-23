@@ -2,14 +2,9 @@ version: "3.7"
 
 services:
   ubuntu:
-    build: .
     container_name: private-gpt
+    build: .
     restart: always
-    volumes: 
-      - sshd:/etc/ssh/
-    ports:
-      - "22:22"
-    network_mode: bridge
     environment:
       PERSIST_DIRECTORY: db
       MODEL_TYPE: GPT4All
@@ -17,5 +12,10 @@ services:
       EMBEDDINGS_MODEL_NAME: all-MiniLM-L6-v2
       MODEL_N_CTX: 1000
 
+    volumes: 
+      - sshd:/etc/ssh/
+      
+    ports:
+      - 22:22
 volumes: 
   sshd:
