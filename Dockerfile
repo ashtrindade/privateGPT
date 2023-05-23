@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 
-RUN apt-get update -qq && apt-get -u upgrade && apt-get install -y \
+RUN apt-get update -qq -y --fix-missing \
+    && apt-get -u upgrade -y \
+    && apt-get install -y \
     python3 \
     python-is-python3 \
     pip \

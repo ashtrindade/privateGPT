@@ -52,11 +52,7 @@ Note: because of the way `langchain` loads the `SentenceTransformers` embeddings
 ### Docker
 
 ```shell
-docker build -t private-gpt .
-```
-
-```shell
-docker run -it --rm --name private-gpt private-gpt
+docker compose up --build
 ```
 
 ## Test dataset
